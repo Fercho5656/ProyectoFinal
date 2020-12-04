@@ -1,0 +1,83 @@
+<%- include('partials/_header')%>
+
+    <div class="container-fluid pl-3">
+        <div class="row mt-5">
+            <div class="col-md-9">
+                <table class="table table-bordered table-responsive">
+                    <thead>
+                        <tr>
+                            <th class="text-center">No.</th>
+                            <th class="text-center">Nombre</th>
+                            <th class="text-center">Telefono</th>
+                            <th class="text-center">Domicilio</th>
+                            <th class="text-center">Email</th>
+                            <th class="text-center">Acciones</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <% if(data) { %>
+                            <% for (let i = 0; i < data.length; i++) { %>
+                                <tr>
+                                    <td>
+                                        <%= (i + 1) %>
+                                    </td>
+                                    <td>
+                                        <%= data[i].nombre %>
+                                    </td>
+                                    <td>
+                                        <%= data[i].telefono %>
+                                    </td>
+                                    <td>
+                                        <%= data[i].domicilio %>
+                                    </td>
+                                    <td>
+                                        <%= data[i].email %>
+                                    </td>
+                                    <td>
+                                        <a href="/delete/<%= data[i].idCliente %>" class="btn btn-danger btn-block">Eliminar</a>
+                                        <a href="/update/<%= data[i].idCliente %>" class="btn btn-warning btn-block">Actualizar</a>
+                                    </td>
+                                </tr>
+                                <% } %>
+                                    <% } %>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-pl-2">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="text-center mt-2">Añadir Cliente</h3>
+                    </div>
+                    <div class="card-body">
+                        <form action="/add" method="POST">
+                            <div class="form-group">
+                                <input type="text" name="nombre" placeholder="Nombre" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="telefono" placeholder="Teléfono" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="domicilio" placeholder="Domicilio" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="email" placeholder="Email" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="contacto" placeholder="Contacto" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="rfc" placeholder="RFC" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="observaciones" placeholder="Observaciones" class="form-control">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Guardar Cliente</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include('partials/_footer')%>

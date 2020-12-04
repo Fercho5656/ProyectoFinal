@@ -1,0 +1,31 @@
+{
+    "name": "ProyectoFinal",
+    "version": "1.0.0",
+    "description": "Proyecto Final de la materia de taller de programación en conjunto con el taller de bases de datos",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "nodemon src/index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Fercho5656/ProyectoFinal.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Fercho5656/ProyectoFinal/issues"
+    },
+    "homepage": "https://github.com/Fercho5656/ProyectoFinal#readme",
+    "dependencies": {
+        "ejs": "^3.1.5",
+        "express": "^4.17.1",
+        "express-myconnection": "^1.0.4",
+        "morgan": "^1.10.0",
+        "mysql": "^2.18.1"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.6"
+    }
+}
