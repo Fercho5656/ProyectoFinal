@@ -35,8 +35,8 @@
                                         <%= data[i].email %>
                                     </td>
                                     <td>
-                                        <a href="/delete/<%= data[i].idCliente %>" class="btn btn-danger btn-block">Eliminar</a>
-                                        <a href="/update/<%= data[i].idCliente %>" class="btn btn-warning btn-block">Actualizar</a>
+                                        <a href="/customers/delete/<%= data[i].idCliente %>" class="btn btn-danger btn-block">Eliminar</a>
+                                        <a href="/customers/update/<%= data[i].idCliente %>" class="btn btn-warning btn-block">Actualizar</a>
                                     </td>
                                 </tr>
                                 <% } %>
@@ -50,7 +50,7 @@
                         <h3 class="text-center mt-2">Añadir Cliente</h3>
                     </div>
                     <div class="card-body">
-                        <form action="/add" method="POST">
+                        <form action="/customers/add" method="POST">
                             <div class="form-group">
                                 <input type="text" name="nombre" placeholder="Nombre" class="form-control">
                             </div>

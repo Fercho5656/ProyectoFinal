@@ -14,7 +14,7 @@ controller.add = (req, res) => {
     const data = req.body;
     req.getConnection((err, conn) => {
         conn.query('INSERT INTO clientes SET ?', [data], (err, rows) => {
-            res.redirect('/');
+            res.redirect('/customers');
         });
     })
 };
@@ -23,7 +23,7 @@ controller.delete = (req, res) => {
     const { idCliente } = req.params;
     req.getConnection((err, conn) => {
         conn.query('DELETE FROM clientes WHERE idCliente = ?', [idCliente], (err, rows) => {
-            res.redirect('/');
+            res.redirect('/customers');
         })
     })
 };
@@ -46,7 +46,7 @@ controller.update = (req, res) => {
 
     req.getConnection((err, conn) => {
         conn.query('UPDATE clientes SET ? WHERE idCliente = ?', [data, idCliente], (err, rows) => {
-            res.redirect('/');
+            res.redirect('/customers');
         });
     });
 };

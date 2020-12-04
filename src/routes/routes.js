@@ -1,7 +1,12 @@
 const express = require('express');
 const router = express.Router();
+const indexController = require('../controllers/indexController');
 const customerController = require('../controllers/customerController');
 
+//Index
+router.get('/', indexController.index);
+
+//Customers
 router.get('/customers', customerController.list);
 router.post('/customers/add', customerController.add);
 
