@@ -2,12 +2,12 @@
     margin-top: 10%;
 }
 
-.card {
+.cardboard {
     position: relative;
     overflow: hidden;
 }
 
-.card:before {
+.cardboard:before {
     position: absolute;
     content: '';
     width: 80%;
@@ -21,16 +21,16 @@
     transition: 1.2s;
 }
 
-.card:hover:before {
+.cardboard:hover:before {
     left: 15%;
 }
 
-.card p {
+.cardboard p {
     width: 100%;
     height: auto;
 }
 
-.card-text {
+.cardboard-text {
     width: 100%;
     padding: 0 20px;
     position: absolute;
@@ -41,11 +41,11 @@
     transition: 1.2s;
 }
 
-.card-text h3 {
+.cardboard-text h3 {
     font-family: poppins;
 }
 
-.card:hover .card-text {
+.cardboard:hover .cardboard-text {
     top: 15%;
 }
 

@@ -24,7 +24,7 @@ controller.delete = (req, res) => {
     req.getConnection((err, conn) => {
         conn.query('DELETE FROM categorias WHERE idCategoria = ?', [idCategoria], (err, rows) => {
             res.redirect('/categories');
-        })
+        });
     });
 };
 

@@ -1,0 +1,71 @@
+<%- include('partials/_header')%>
+
+    <div class="container-fluid pl-3">
+        <div class="row mt-5">
+            <div class="col-md-9">
+                <table class="table table-bordered table-responsive">
+                    <thead>
+                        <tr>
+                            <th class="text-center">No.</th>
+                            <th class="text-center">Nombre</th>
+                            <th class="text-center">Nombre de Usuario</th>
+                            <th class="text-center">Tipo de Usuario</th>
+                            <th class="text-center">Acciones</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <% if(data) { %>
+                            <% for (let i = 0; i < data.length; i++) { %>
+                                <tr>
+                                    <td>
+                                        <%= (i + 1) %>
+                                    </td>
+                                    <td>
+                                        <%= data[i].nombreCompleto %>
+                                    </td>
+                                    <td>
+                                        <%= data[i].username %>
+                                    </td>
+                                    <td>
+                                        <%= data[i].tipo %>
+                                    </td>
+                                    <td>
+                                        <a href="/users/delete/<%= data[i].idUsuario %>" class="btn btn-danger btn-block">Eliminar</a>
+                                        <a href="/users/update/<%= data[i].idUsuario %>" class="btn btn-warning btn-block">Actualizar</a>
+                                    </td>
+                                </tr>
+                                <% } %>
+                                    <% } %>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-pl-2">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="text-center mt-2">Añadir Usuario</h3>
+                    </div>
+                    <div class="card-body">
+                        <form action="/users/add" method="POST">
+                            <div class="form-group">
+                                <input type="text" name="nombreCompleto" placeholder="Nombre" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="username" placeholder="Nombre de Usuario" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" name="password" placeholder="Contraseña" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="tipo" placeholder="Tipo de Usuario" class="form-control">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Guardar Usuario</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <%- include('partials/_footer')%>
