@@ -6,7 +6,7 @@ controller.list = (req, res) => {
             res.render('customer.ejs', {
                 data: rows
             });
-        })
+        });
     });
 };
 
@@ -16,7 +16,7 @@ controller.add = (req, res) => {
         conn.query('INSERT INTO clientes SET ?', [data], (err, rows) => {
             res.redirect('/customers');
         });
-    })
+    });
 };
 
 controller.delete = (req, res) => {
@@ -24,8 +24,8 @@ controller.delete = (req, res) => {
     req.getConnection((err, conn) => {
         conn.query('DELETE FROM clientes WHERE idCliente = ?', [idCliente], (err, rows) => {
             res.redirect('/customers');
-        })
-    })
+        });
+    });
 };
 
 controller.updateForm = (req, res) => {
