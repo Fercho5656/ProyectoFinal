@@ -53,3 +53,23 @@
     color: white;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(52, 58, 64);
+    color: white;
+    text-align: center;
+    flex: 0 0 50px;
+    margin-top: auto;
+    height: 6em;
+    position: relative;
+    font-size: medium;
+}
