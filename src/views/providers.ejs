@@ -2,9 +2,10 @@
 
     <div class="container-fluid pl-3">
         <div class="row mt-5">
-            <div class="col-md-8">
-                <table class="table table-bordered table-responsive">
-                    <thead>
+            <div class="col-md-9 table-responsive">
+                <table class="table table-bordered table-striped table-hover table-sm mx-auto w-auto">
+                    <caption>Lista de proveedores</caption>
+                    <thead class="thead-dark">
                         <tr>
                             <th class="text-center">No.</th>
                             <th class="text-center">Nombre</th>
@@ -19,19 +20,19 @@
                         <% if(data) { %>
                             <% for (let i = 0; i < data.length; i++) { %>
                                 <tr>
-                                    <td>
+                                    <td class="text-center">
                                         <%= (i + 1) %>
                                     </td>
-                                    <td>
+                                    <td class="text-center">
                                         <%= data[i].nombre %>
                                     </td>
-                                    <td>
+                                    <td class="text-center">
                                         <%= data[i].telefono %>
                                     </td>
-                                    <td>
+                                    <td class="text-center">
                                         <%= data[i].domicilio %>
                                     </td>
-                                    <td>
+                                    <td class="text-center">
                                         <%= data[i].email %>
                                     </td>
                                     <td>
@@ -47,7 +48,7 @@
             <div class="col-pl-2">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="text-center mt-2">Añadir Proveedor</h3>
+                        <h4 class="text-center mt-2">Añadir Proveedor</h4>
                     </div>
                     <div class="card-body">
                         <form action="/providers/add" method="POST">
