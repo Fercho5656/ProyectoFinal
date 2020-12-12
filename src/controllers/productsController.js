@@ -2,7 +2,11 @@ const controller = {};
 
 controller.list = (req, res) => {
     req.getConnection((err, conn) => {
-        conn.query('SELECT * FROM productos', (err, rows) => {
+        conn.query(`SELECT productos.*, categorias.nombre AS "nombreCategoria" 
+                    FROM productos 
+                    INNER JOIN categorias 
+                    ON categorias.idCategoria = productos.idCategoria`, (err, rows) => {
+            console.log(rows);
             res.render('products.ejs', {
                 data: rows
             });

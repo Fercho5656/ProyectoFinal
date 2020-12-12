@@ -1,3 +1,7 @@
+require('dotenv').config();
+
+console.log(process.env.DB_HOST);
+
 const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
@@ -16,11 +20,11 @@ app.set('views', path.join(__dirname, 'views'));
 //Middleware
 app.use(morgan('dev'));
 app.use(myConnection(mysql, {
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    port: 3306,
-    database: 'proyectofinal'
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASS,
+    port: process.env.DB_PORT,
+    database: process.env.DB_NAME
 }, 'single'));
 app.use(express.urlencoded({ extended: false }));
 
