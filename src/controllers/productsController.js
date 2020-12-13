@@ -5,10 +5,12 @@ controller.list = (req, res) => {
         conn.query(`SELECT productos.*, categorias.nombre AS "nombreCategoria" 
                     FROM productos 
                     INNER JOIN categorias 
-                    ON categorias.idCategoria = productos.idCategoria`, (err, rows) => {
-            console.log(rows);
-            res.render('products.ejs', {
-                data: rows
+                    ON categorias.idCategoria = productos.idCategoria`, (err, rowsProductos) => {
+            conn.query(`SELECT * FROM categorias`, (err, rowsCategorias) => {
+                res.render('products.ejs', {
+                    data: rowsProductos,
+                    dataCategorias: rowsCategorias
+                });
             });
         });
     });
@@ -16,8 +18,10 @@ controller.list = (req, res) => {
 
 controller.add = (req, res) => {
     const data = req.body;
+    console.log(data);
     req.getConnection((err, conn) => {
         conn.query('INSERT INTO productos SET ?', [data], (err, rows) => {
+            console.log(err);
             res.redirect('/products');
         });
     });

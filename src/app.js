@@ -1,7 +1,5 @@
 require('dotenv').config();
 
-console.log(process.env.DB_HOST);
-
 const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
@@ -19,6 +17,7 @@ app.set('views', path.join(__dirname, 'views'));
 
 //Middleware
 app.use(morgan('dev'));
+//Datos Conexion Base de Datos
 app.use(myConnection(mysql, {
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
