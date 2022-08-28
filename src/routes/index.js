@@ -1,12 +1,12 @@
-const express = require('express');
-const router = express.Router();
-const indexController = require('../controllers/indexController');
-const customerController = require('../controllers/customerController');
-const categoriesController = require('../controllers/categoriesController');
-const providersController = require('../controllers/providersController');
-const usersController = require('../controllers/usersController');
-const productsController = require('../controllers/productsController');
+import express from 'express'
+import indexController from '../controllers/indexController.js'
+import customerController from '../controllers/customerController.js'
+import categoriesController from '../controllers/categoriesController.js'
+import providersController from '../controllers/providersController.js'
+import usersController from '../controllers/usersController.js'
+import productsController from '../controllers/productsController.js'
 
+const router = express.Router();
 //Index
 router.get('/', indexController.index);
 
@@ -45,4 +45,4 @@ router.get('/products/delete/:idProducto', productsController.delete);
 router.get('/products/update/:idProducto', productsController.updateForm);
 router.post('/products/update/:idProducto', productsController.update);
 
-module.exports = router;
+export default router;
