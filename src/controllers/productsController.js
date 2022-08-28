@@ -2,6 +2,7 @@ const controller = {};
 
 controller.list = (req, res) => {
     req.getConnection((err, conn) => {
+        console.log(conn)
         conn.query(`SELECT productos.*, categorias.nombre AS "nombreCategoria" 
                     FROM productos 
                     INNER JOIN categorias 
@@ -59,4 +60,4 @@ controller.update = (req, res) => {
 };
 
 
-module.exports = controller;
+export default controller;
